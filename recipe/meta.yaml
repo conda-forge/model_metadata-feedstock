@@ -1,4 +1,4 @@
-{% set version = "0.3.3" %}
+{% set version = "0.4.0" %}
 
 package:
   name: model_metadata
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/csdms/model_metadata/archive/v{{ version }}.tar.gz
-  sha256: 303743c017a017ee684085db759cb61079da43d8dc9c4eff7301a8f84f981f62
+  sha256: 1d5071f8cf9139887592af0181edfc99fe38dee82e7e628293e3c424ef4c3053
 
 build:
   noarch: python
@@ -17,6 +17,7 @@ build:
     - mmd-dump = model_metadata.cli.main_dump:main
     - mmd-find = model_metadata.cli.main_find:main
     - mmd-install = model_metadata.cli.main_install:main
+    - mmd-query = model_metadata.cli.main_query:main
     - mmd-stage = model_metadata.cli.main_stage:main
 
 requirements:
