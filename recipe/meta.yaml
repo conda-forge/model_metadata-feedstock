@@ -1,4 +1,4 @@
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 package:
   name: model_metadata
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/csdms/model_metadata/archive/v{{ version }}.tar.gz
-  sha256: 1d5071f8cf9139887592af0181edfc99fe38dee82e7e628293e3c424ef4c3053
+  sha256: b275ba63f07cb6c0388b1e5923f9cbd5a115fb1124752e507403291a319e1def
 
 build:
   noarch: python
@@ -34,10 +34,13 @@ requirements:
     - binaryornot
 
 test:
-  requires:
-    - nose
   commands:
-    - nosetests --with-doctest model_metadata
+    - mmd --help
+    - mmd-dump --help
+    - mmd-find --help
+    - mmd-install --help
+    - mmd-query --help
+    - mmd-stage --help
 
 about:
   home: http://github.com/csdms/model_metadata
