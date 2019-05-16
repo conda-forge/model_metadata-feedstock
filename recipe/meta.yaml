@@ -1,4 +1,4 @@
-{% set version = "0.4.3" %}
+{% set version = "0.5.0" %}
 
 package:
   name: model_metadata
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/csdms/model_metadata/archive/v{{ version }}.tar.gz
-  sha256: 58ffa852f1871042caf30761c587e84e979ff65da8bb7635133ccbdbe3a207a7
+  sha256: d3168813642d5de5dde963c11456ae77f7843bee14daf34b76ee8088d699a784
 
 build:
   noarch: python
