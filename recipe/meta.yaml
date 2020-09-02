@@ -1,4 +1,4 @@
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: model_metadata
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/csdms/model_metadata/archive/v{{ version }}.tar.gz
-  sha256: bd9d5fbbd2965cf476fc5474003ac7bd9d925c75e4e71183e6cbdd13f211192f
+  sha256: 0951bbdf73a127794af2a08eff35dfe429a57d8f2187cf60bfb8fbdb9e88d73c
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - mmd = model_metadata.cli.main:mmd
 
