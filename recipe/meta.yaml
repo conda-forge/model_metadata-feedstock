@@ -1,4 +1,4 @@
-{% set version = "0.6.2" %}
+{% set version = "0.7.0" %}
 
 package:
   name: model_metadata
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/csdms/model_metadata/archive/v{{ version }}.tar.gz
-  sha256: 3f92d09ad1653e8f95b6325d59f78e38cb9b33c38ba993bcfb8c206280573a81
+  sha256: 2cc40cb056124cfd39a2b35555017544fffefadf6f840cf8d09c744d20eabda2
 
 build:
   noarch: python
@@ -23,9 +23,7 @@ requirements:
     - python
     - packaging
     - pyyaml
-    - six
     - jinja2
-    - scripting
     - binaryornot
     - click
 
