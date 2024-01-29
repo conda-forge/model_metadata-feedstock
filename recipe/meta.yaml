@@ -38,7 +38,7 @@ about:
   home: http://github.com/csdms/model_metadata
   license: MIT
   license_family: MIT
-  license_file: LICENSE
+  license_file: LICENSE.md
   summary: Tools for working with CSDMS Model Metadata
   description: |
     The CSDMS model_metadata Python package provides tools for working
