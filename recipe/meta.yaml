@@ -13,7 +13,8 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
-    - mmd = model_metadata.cli.main:mmd
+    - mmd = model_metadata.main:main
+    - model-metadata = model_metadata.main:main
 
 requirements:
   build:
@@ -22,17 +23,16 @@ requirements:
   run:
     - python
     - packaging
+    - importlib-resources  # py<312
     - pyyaml
     - jinja2
-    - binaryornot
-    - click
 
 test:
   commands:
-    - mmd --help
-    - mmd find --help
-    - mmd query --help
-    - mmd stage --help
+    - model-metadata --help
+    - model-metadata find --help
+    - model-metadata query --help
+    - model-metadata stage --help
 
 about:
   home: http://github.com/csdms/model_metadata
