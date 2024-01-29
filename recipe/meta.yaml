@@ -1,44 +1,44 @@
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 package:
   name: model_metadata
   version: {{ version }}
 
 source:
-  url: https://github.com/csdms/model_metadata/archive/v{{ version }}.tar.gz
-  sha256: 2cc40cb056124cfd39a2b35555017544fffefadf6f840cf8d09c744d20eabda2
+  url: https://pypi.io/packages/source/m/model_metadata/model_metadata-0.8.0.tar.gz
+  sha256: ae4611dc5e5c98c4a0cdc7da32562b665763a34777335961b703d5cc0bc14e30
 
 build:
   noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
-    - mmd = model_metadata.cli.main:mmd
+    - mmd = model_metadata.main:main
+    - model-metadata = model_metadata.main:main
 
 requirements:
   build:
-    - python
+    - python >=3.10
     - pip
   run:
-    - python
+    - python >=3.10
     - packaging
+    - importlib-resources  # py<312
     - pyyaml
     - jinja2
-    - binaryornot
-    - click
 
 test:
   commands:
-    - mmd --help
-    - mmd find --help
-    - mmd query --help
-    - mmd stage --help
+    - model-metadata --help
+    - model-metadata find --help
+    - model-metadata query --help
+    - model-metadata stage --help
 
 about:
   home: http://github.com/csdms/model_metadata
   license: MIT
   license_family: MIT
-  license_file: LICENSE
+  license_file: LICENSE.md
   summary: Tools for working with CSDMS Model Metadata
   description: |
     The CSDMS model_metadata Python package provides tools for working
