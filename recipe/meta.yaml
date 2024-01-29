@@ -18,10 +18,10 @@ build:
 
 requirements:
   build:
-    - python
+    - python >=3.10
     - pip
   run:
-    - python
+    - python >=3.10
     - packaging
     - importlib-resources  # py<312
     - pyyaml
