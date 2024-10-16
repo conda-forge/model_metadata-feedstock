@@ -21,6 +21,7 @@ requirements:
     - python >=3.10
     - pip
   host:
+    - python
     - setuptools
   run:
     - python >=3.10
