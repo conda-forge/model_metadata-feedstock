@@ -20,6 +20,8 @@ requirements:
   build:
     - python >=3.10
     - pip
+  host:
+    - setuptools
   run:
     - python >=3.10
     - packaging
