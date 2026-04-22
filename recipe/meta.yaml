@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set version = "0.8.2" %}
 
 package:
@@ -5,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/m/model_metadata/model_metadata-0.8.2.tar.gz
+  url: https://pypi.org/packages/source/m/model_metadata/model_metadata-0.8.2.tar.gz
   sha256: 3f8f238b70f0ff21f31f8207ab021e74379c5a3b0860a0e89d202a511c0c974e
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - mmd = model_metadata.main:main
@@ -21,17 +22,19 @@ requirements:
     - python >=3.10
     - pip
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - packaging
     - importlib-resources  # py<312
     - pyyaml
     - jinja2
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - model-metadata --help
     - model-metadata find --help
